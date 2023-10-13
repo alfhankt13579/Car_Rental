@@ -1,0 +1,488 @@
+<nav
+  class="navbar navbar-expand-lg bg-secondary"
+  style="min-height: 10vh; height: min-content"
+>
+  <div class="container-fluid">
+    <a
+      class="navbar-brand text-white px-4"
+      style="font-size: 1.75rem; cursor: pointer"
+      >Car Rental</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="ms-auto d-flex gap-3 navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link active text-white"
+            aria-current="page"
+            routerLink="/main view"
+            >Home</a
+          >
+        </li>
+       
+        <li class="nav-item">
+          <a
+            class="nav-link text-white"
+            style="cursor: pointer"
+            (click)="clientBookingDetails()"
+          >
+            Booking Details
+          </a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-primary text-white" (click)="logout()">
+            Logout
+            <span *ngIf="logoutSuccess">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main
+  style="
+    background-color: rgb(222, 222, 222);
+    min-height: 70vh;
+    height: min-content;
+    position: relative;
+  "
+  class="py-4"
+>
+  <div style="position: absolute; top: 1rem">
+    <button
+      class="btn btn-success"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#staticBackdrop"
+      aria-controls="staticBackdrop"
+      style="border-radius: 0rem 0.5rem 0.5rem 0rem; font-size: 1.5rem"
+    >
+      Filter
+      <div class="fa-solid fa-angles-right"></div>
+    </button>
+  </div>
+
+  <div style="position: absolute; top: 4.5rem; left: 0.5rem">
+    <div style="border-radius: 25%; border: 0.2rem solid black" routerLink="/main view">
+      <button
+        class="fa-solid fa-arrow-left btn"
+        style="font-size: 1.5rem"
+      ></button>
+    </div>
+  </div>
+
+  <div
+    class="offcanvas offcanvas-start"
+    data-bs-backdrop="static"
+    tabindex="-1"
+    id="staticBackdrop"
+    aria-labelledby="staticBackdropLabel"
+  >
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title" id="staticBackdropLabel">Filter</h2>
+
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <h4>Number of Seats:</h4>
+
+      <div
+        class="d-flex justify-content-center align-items-center flex-wrap column-gap-4 pt-2 pb-4"
+      >
+        <button
+          class="btn btn-ouline-secondary border border-secondary"
+          style="width: 4rem; height: 4rem"
+          [class.btn-secondary]="
+            selectedFilter === 'carSeats' && selectedValue === '4'
+          "
+          (click)="filterCars('carSeats', '4')"
+        >
+          <i class="fa-solid fa-couch fa-xl"></i>4
+        </button>
+        <button
+          class="btn btn-ouline-secondary border border-secondary"
+          style="width: 4rem; height: 4rem"
+          [class.btn-secondary]="
+            selectedFilter === 'carSeats' && selectedValue === '5'
+          "
+          (click)="filterCars('carSeats', '5')"
+        >
+          <i class="fa-solid fa-couch fa-xl"></i>5
+        </button>
+        <button
+          class="btn btn-ouline-secondary border border-secondary"
+          style="width: 4rem; height: 4rem"
+          [class.btn-secondary]="
+            selectedFilter === 'carSeats' && selectedValue === '7'
+          "
+          (click)="filterCars('carSeats', '7')"
+        >
+          <i class="fa-solid fa-couch fa-xl"></i>7
+        </button>
+      </div>
+
+      <h4>Car Type:</h4>
+      <div
+        class="d-flex justify-content-center align-items-center flex-wrap column-gap-4 pt-2 pb-4"
+      >
+        <button
+          class="btn btn-ouline-secondary border border-secondary"
+          style="width: 6rem; height: 6rem"
+          [class.btn-secondary]="
+            selectedFilter === 'carType' && selectedValue === 'Hatchback'
+          "
+          (click)="filterCars('carType', 'Hatchback')"
+        >
+          <i class="fa-solid fa-car-side fa-lg"></i> HatchBack
+        </button>
+        <button
+          class="btn btn-ouline-secondary border border-secondary"
+          style="width: 6rem; height: 6rem"
+          [class.btn-secondary]="
+            selectedFilter === 'carType' && selectedValue === 'Sedan'
+          "
+          (click)="filterCars('carType', 'Sedan')"
+        >
+          <i class="fa-solid fa-car-side fa-xl"></i> Sedan
+        </button>
+        <button
+          class="btn btn-ouline-secondary border border-secondary"
+          style="width: 6rem; height: 6rem"
+          [class.btn-secondary]="
+            selectedFilter === 'carType' && selectedValue === 'SUV'
+          "
+          (click)="filterCars('carType', 'SUV')"
+        >
+          <i class="fa-solid fa-car-side fa-2xl"></i> SUV
+        </button>
+      </div>
+
+      <h4>Fuel Type:</h4>
+      <div
+        class="d-flex justify-content-center align-items-center flex-wrap column-gap-4 pt-2 pb-4"
+      >
+        <button
+          class="btn btn-ouline-secondary border border-secondary"
+          style="width: 5rem; height: 5rem"
+          [class.btn-secondary]="
+            selectedFilter === 'fuelType' && selectedValue === 'Petrol'
+          "
+          (click)="filterCars('fuelType', 'Petrol')"
+        >
+          <i class="fa-solid fa-gas-pump fa-xl"></i>
+          Petrol
+        </button>
+        <button
+          class="btn btn-ouline-secondary border border-secondary"
+          style="width: 5rem; height: 5rem"
+          [class.btn-secondary]="
+            selectedFilter === 'fuelType' && selectedValue === 'Diesel'
+          "
+          (click)="filterCars('fuelType', 'Diesel')"
+        >
+          <i class="fa-solid fa-gas-pump fa-xl"></i>
+          Diesel
+        </button>
+        <button
+          class="btn btn-ouline-secondary border border-secondary"
+          style="width: 5rem; height: 5rem"
+          [class.btn-secondary]="
+            selectedFilter === 'fuelType' && selectedValue === 'Electric'
+          "
+          (click)="filterCars('fuelType', 'Electric')"
+        >
+          <i class="fa-solid fa-charging-station fa-xl"></i>
+          Electric
+        </button>
+      </div>
+      <div
+        class="d-flex justify-content-center align-items-center flex-wrap column-gap-4 pt-2 pb-4"
+      >
+        <button (click)="resetFilters()" class="btn btn-outline-secondary">
+          Reset Filters
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel">
+            Where do you want your car delivered?
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center flex-wrap gap-3"
+          >
+            <div
+              class="d-flex justify-content-center align-items-center flex-wrap column-gap-3"
+            >
+              <div class="d-flex flex-column justify-content-center row-gap-3">
+                <div>
+                  <label for="state">State:</label>
+                  <select
+                    class="form-select"
+                    name="state"
+                    [(ngModel)]="selectedState"
+                    (change)="onStateChange()"
+                  >
+                    <option value="Kerala">Kerala</option>
+                    <option value="Tamilnadu">Tamil Nadu</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="district">District:</label>
+                  <select
+                    class="form-select"
+                    name="district"
+                    [(ngModel)]="selectedDistrict"
+                    [disabled]="!selectedState"
+                  >
+                    <option
+                      class="form-control"
+                      *ngFor="let district of districts"
+                      [value]="district.name"
+                    >
+                      {{ district.name }}
+                    </option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="location">Location:</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="location"
+                    [(ngModel)]="location"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-center row-gap-3">
+                <div class="d-flex flex-column">
+                  <label for="startDate">Start Date:</label>
+                  <input
+                    class="form-control"
+                    type="date"
+                    name="startDate"
+                    [(ngModel)]="startDate"
+                    value="{{ startDate }}"
+                    [min]="minDate"
+                    (blur)="validateDateMin()"
+                    required
+                  />
+                </div>
+
+                <div class="d-flex flex-column">
+                  <label for="endDate">End Date:</label>
+                  <input
+                    class="form-control"
+                    type="date"
+                    name="endDate"
+                    [(ngModel)]="endDate"
+                    value="{{ endDate }}"
+                    [min]="maxDate"
+                    (blur)="validateDateMax()"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="d-flex justify-content-center align-items-center flex-wrap column-gap-3"
+            >
+              <div class="text-danger">{{ errorMessage1 }}</div>
+              <div class="text-danger">{{ errorMessage2 }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <ng-container>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="bookNow()"
+              [disabled]="
+                !selectedState ||
+                !selectedDistrict ||
+                !location ||
+                !startDate ||
+                !endDate
+              "
+            >
+              Book Now
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="d-flex justify-content-center align-items-center"
+    style="height: 30rem"
+    *ngIf="bookingSuccess"
+  >
+    <div style="font-size: 4rem">Adding Details to Booking</div>
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <h1 *ngIf="!bookingSuccess" class="text-center pt-4 pb-2">Car List</h1>
+
+  <div
+    *ngIf="!bookingSuccess"
+    class="d-flex justify-content-center align-items-stretch gap-4 flex-wrap"
+  >
+    <ng-container *ngFor="let car of filteredCars; let i = index">
+      <div class="card shadow-lg" style="width: 18rem">
+        <div style="height: 12rem; overflow: hidden">
+          <img
+            class="card-img-top"
+            src="{{ car.carImage }}"
+            style="height: 100%"
+          />
+        </div>
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h3 class="card-title text-center pb-2">Details Of Car</h3>
+          <div class="ps-3">
+            <p class="card-text">
+              <strong>Type of Car: </strong> {{ car.carType }}
+            </p>
+            <p class="card-text">
+              <strong>Name of Car: </strong> {{ car.carName }}
+            </p>
+            <p class="card-text">
+              <strong>Number of Seats: </strong> {{ car.carSeats }} Seats
+            </p>
+            <p class="card-text">
+              <strong>Type Of Fuel Used: </strong> {{ car.fuelType }}
+            </p>
+            <p class="card-text">
+              <strong>Rent Per Day: </strong> ${{ car.rentPerDay }}
+            </p>
+          </div>
+          <button
+            (click)="selectCar(i)"
+            type="button"
+            class="btn btn-primary mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Choose Car
+          </button>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="filteredCars.length == 0">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center m-5 p-5"
+        style="width: 100%; height: 100%; font-size: 3rem"
+      >
+        No Cars Available
+      </div>
+    </ng-container>
+  </div>
+</main>
+
+<footer class="bg-dark text-center text-white" style="height: 20vh">
+  <div class="py-3">
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-facebook-f"> </i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-twitter"> </i>
+    </a>
+
+    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <i class="fab fa-google"> </i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-linkedin-in"> </i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-github"> </i>
+    </a>
+  </div>
+
+  <div
+    class="text-white text-center fw-semibold py-2"
+    style="background-color: #30363e; font-size: 1.1rem"
+  >
+    © 2023 Copyright:
+    <a class="fw-semibold text-info link-offset-2" href="#!"> Car Rental </a>
+  </div>
+</footer>

@@ -1,0 +1,205 @@
+<nav
+  class="navbar bg-secondary text-white ps-3"
+  style="height: 10vh; font-size: 1.75rem"
+>
+  Car Rental
+</nav>
+
+<main
+  style="
+    background-color: rgb(222, 222, 222);
+    min-height: 70vh;
+    height: min-content;
+  "
+>
+  <h1 class="text-center pt-3">Register</h1>
+
+  <div
+    class="d-flex justify-content-center align-items-center row-gap-3 column-gap-5 pb-3"
+  >
+    <div style="width: 28rem">
+      <img
+        class="img-fluid"
+        src="https://img.freepik.com/free-vector/buying-renting-new-used-speedy-sports-car_3446-651.jpg"
+        style="width: 100%; mix-blend-mode: multiply"
+      />
+    </div>
+    <div
+      class="d-flex flex-column align-items-center justify-content-center"
+      style="background-color: #b1bfcc; width: 30rem; border-radius: 10px"
+    >
+      <h2 class="text-center pt-3 pb-2">
+        <p class="text-black">Create an account</p>
+      </h2>
+
+      <div class="d-flex align-items-center pt-1 pb-2" *ngIf="registerSuccess">
+        <h2 class="me-2">Registering</h2>
+        <div class="spinner-border text-dark" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+
+      <form
+        class="d-flex flex-column align-items-center justify-content-center row-gap-3"
+        *ngIf="!registerSuccess"
+        (ngSubmit)="register()"
+        [formGroup]="registrationForm"
+      >
+        <div class="form-outline mb-2">
+          <input
+            type="text"
+            name="userName"
+            formControlName="userName"
+            class="form-control"
+            placeholder="User Name"
+            style="width: 25rem"
+            autocomplete="off"
+          />
+          <div
+            *ngIf="
+              this.registrationForm.get('userName')?.errors &&
+              this.registrationForm.get('userName')?.touched
+            "
+            id="userNameHelpBlock"
+            class="form-text text-danger ps-2"
+            style="width: 24rem"
+          >
+            Invalid Username (Please add your Username with Alphabets Only)
+          </div>
+        </div>
+
+        <div class="form-outline mb-2">
+          <input
+            type="text"
+            name="mobileNumber"
+            formControlName="mobileNumber"
+            class="form-control"
+            placeholder="Mobile Number"
+            style="width: 25rem"
+            autocomplete="off"
+          />
+          <div
+            *ngIf="
+              this.registrationForm.get('mobileNumber')?.errors &&
+              this.registrationForm.get('mobileNumber')?.touched
+            "
+            id="mobileNumberHelpBlock"
+            class="form-text text-danger ps-2"
+            style="width: 24rem"
+          >
+            Invalid Mobile Number (Ensure you have entered exactly 10 digits of
+            Number)
+          </div>
+        </div>
+
+        <div class="form-outline mb-2">
+          <input
+            type="password"
+            name="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Password"
+            style="width: 25rem"
+            autocomplete="off"
+          />
+          <div
+            *ngIf="
+              this.registrationForm.get('password')?.errors &&
+              this.registrationForm.get('password')?.touched
+            "
+            class="form-text mx-auto text-danger"
+            style="width: 24rem; text-align: justify"
+          >
+            Your password must be 6-20 characters long, contain letters and
+            numbers, and must not contain spaces, special characters, or emoji.
+          </div>
+        </div>
+
+        <h3 *ngIf="registerError" class="text-center text-danger">
+          {{ registerError }}
+        </h3>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="btn btn-secondary text-white fw-semibold"
+            style="width: min-content"
+          >
+            Register
+          </button>
+        </div>
+
+        <div
+          class="fw-semibold text-center text-black pt-1 pb-3"
+          style="font-size: 1.1rem"
+        >
+          Have an account already?
+          <a class="fw-semibold text-reset link-offset-3" routerLink="/login">
+            <u class="text-success"> Login here </u>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-dark text-center text-white" style="height: 20vh">
+  <div class="py-3">
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-facebook-f"> </i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-twitter"> </i>
+    </a>
+
+    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <i class="fab fa-google"> </i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-linkedin-in"> </i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-github"> </i>
+    </a>
+  </div>
+
+  <div
+    class="text-white text-center fw-semibold py-2"
+    style="background-color: #30363e; font-size: 1.1rem"
+  >
+    © 2023 Copyright:
+    <a class="fw-semibold text-info link-offset-2" href="#!"> Car Rental </a>
+  </div>
+</footer>

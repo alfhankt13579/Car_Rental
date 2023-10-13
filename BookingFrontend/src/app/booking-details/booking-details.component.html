@@ -1,0 +1,192 @@
+<nav
+  class="navbar navbar-expand-lg bg-secondary"
+  style="min-height: 10vh; height: min-content"
+>
+  <div class="container-fluid">
+    <a
+      class="navbar-brand text-white px-4"
+      style="font-size: 1.75rem; cursor: pointer"
+      >Car Rental</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="ms-auto d-flex gap-3 navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link active text-white"
+            aria-current="page"
+            routerLink="/main view"
+            >Home</a
+          >
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link text-white" href="#">Features</a>
+        </li> -->
+        <li class="nav-item">
+          <a
+            class="nav-link text-white"
+            style="cursor: pointer"
+            (click)="clientBookingDetails()"
+          >
+            Booking Details
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main
+  style="
+    background-color: rgb(222, 222, 222);
+    min-height: 70vh;
+    height: min-content;
+    position: relative;
+  "
+  class="pt-4"
+>
+  <div
+    class="card-header d-flex justify-content-center align-items-center pb-2"
+  >
+    <h3>Booking History</h3>
+  </div>
+  <div
+    class="d-flex justify-content-center align-items-center flex-wrap gap-3 pb-4"
+  >
+    <ng-container *ngFor="let is of clientBookingDetails; let i = index">
+      <div class="card shadow-lg" style="width: 40rem">
+        <div class="card-title d-flex justify-content-around pt-3">
+          <h4 class="card-text">
+            <strong>Start Date: </strong>
+            {{ is.startDate }}
+          </h4>
+          <h4 class="card-text">
+            <strong>End Date: </strong>
+            {{ is.endDate }}
+          </h4>
+        </div>
+
+        <div
+          class="card-body d-flex justify-content-between align-items-center mx-3"
+        >
+          <div>
+            <p class="card-text" style="text-align: justify">
+              <strong>Location: </strong>
+              {{ is.location }}
+            </p>
+            <p class="card-text" style="text-align: justify">
+              <strong>District: </strong>
+              {{ is.district }}
+            </p>
+            <p class="card-text" style="text-align: justify">
+              <strong>State: </strong>
+              {{ is.state }}
+            </p>
+            <p class="card-text" style="text-align: justify">
+              <strong>Rate of Rent: </strong>
+              ${{ is.rent }}
+            </p>
+          </div>
+
+          <div>
+            <p class="card-text" style="text-align: justify">
+              <strong>Name of Car: </strong>
+              {{ this.pickedCars[i].carName }}
+            </p>
+            <p class="card-text" style="text-align: justify">
+              <strong>Type of Car: </strong>
+              {{ this.pickedCars[i].carType }}
+            </p>
+            <p class="card-text" style="text-align: justify">
+              <strong>Number of Car Seats: </strong>
+              {{ this.pickedCars[i].carSeats }}
+            </p>
+            <p class="card-text" style="text-align: justify">
+              <strong>Type of Fuel: </strong>
+              {{ this.pickedCars[i].fuelType }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="clientBookingDetails.length == 0">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center m-5 p-5"
+        style="width: 100%; height: 100%; font-size: 3rem"
+      >
+        No bookings Done
+      </div>
+    </ng-container>
+  </div>
+</main>
+
+<footer class="bg-dark text-center text-white" style="height: 20vh">
+  <div class="py-3">
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-facebook-f"> </i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-twitter"> </i>
+    </a>
+
+    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <i class="fab fa-google"> </i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-linkedin-in"> </i>
+    </a>
+
+    <a
+      class="btn btn-outline-light btn-floating m-1"
+      href="#!"
+      role="button"
+      style="width: 2.5rem"
+    >
+      <i class="fab fa-github"> </i>
+    </a>
+  </div>
+
+  <div
+    class="text-white text-center fw-semibold py-2"
+    style="background-color: #30363e; font-size: 1.1rem"
+  >
+    © 2023 Copyright:
+    <a class="fw-semibold text-info link-offset-2" href="#!"> Car Rental </a>
+  </div>
+</footer>

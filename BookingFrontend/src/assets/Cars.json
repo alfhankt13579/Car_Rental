@@ -1,0 +1,202 @@
+[
+  {
+    "carId": 1,
+    "carImage": "https://thumbs.dreamstime.com/b/toyota-yaris-new-white-isolated-white-60701059.jpg",
+    "carType": "Hatchback",
+    "carName": "Toyota Yaris",
+    "carSeats": "4",
+    "fuelType": "Petrol",
+    "price": 25000,
+    "rentPerDay": 45
+  },
+  {
+    "carId": 2,
+    "carImage": "https://images-stag.jazelc.com/uploads/hardinhonda-2-m2en/19_Civic_HB_Sport_White.png",
+    "carType": "Sedan",
+    "carName": "Honda Civic",
+    "carSeats": "5",
+    "fuelType": "Petrol",
+    "price": 30000,
+    "rentPerDay": 54
+  },
+  {
+    "carId": 3,
+    "carImage": "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/CamryModelImage.jpg&w=730&h=484&q=75&c=1",
+    "carType": "Sedan",
+    "carName": "Toyota Camry",
+    "carSeats": "5",
+    "fuelType": "Petrol",
+    "price": 28000,
+    "rentPerDay": 50
+  },
+  {
+    "carId": 4,
+    "carImage": "https://pictures.dealer.com/l/landmarkspringfieldfordfd/1702/13293a3c612ee7d267321ec8be91735ax.jpg?impolicy=downsize&w=568",
+    "carType": "SUV",
+    "carName": "Ford Explorer",
+    "carSeats": "7",
+    "fuelType": "Petrol",
+    "price": 40000,
+    "rentPerDay": 71
+  },
+  {
+    "carId": 5,
+    "carImage": "https://blogmedia.dealerfire.com/wp-content/uploads/sites/376/2019/12/2020-Nissan-Altima-glacier-white_o.png",
+    "carType": "Sedan",
+    "carName": "Nissan Altima",
+    "carSeats": "5",
+    "fuelType": "Petrol",
+    "price": 29000,
+    "rentPerDay": 52
+  },
+  {
+    "carId": 6,
+    "carImage": "https://www.ccarprice.com/products/Volkswagen_Passat_Limited_Edition_2023_1.jpg",
+    "carType": "Sedan",
+    "carName": "Volkswagen Passat",
+    "carSeats": "5",
+    "fuelType": "Diesel",
+    "price": 35000,
+    "rentPerDay": 63
+  },
+  {
+    "carId": 7,
+    "carImage": "https://www.nicepng.com/png/detail/61-617639_best-free-jeep-in-png-jeep-grand-cherokee.png",
+    "carType": "SUV",
+    "carName": "Jeep Grand Cherokee",
+    "carSeats": "5",
+    "fuelType": "Petrol",
+    "price": 32000,
+    "rentPerDay": 58
+  },
+  {
+    "carId": 8,
+    "carImage": "https://www.jacksonford.net/assets/stock/expanded/transparent/1280/2020chs15_1280/2020chs150070_1280_07.png?bg-color=FFFFFF&width=400",
+    "carType": "SUV",
+    "carName": "Chevrolet Equinox",
+    "carSeats": "5",
+    "fuelType": "Petrol",
+    "price": 38000,
+    "rentPerDay": 68
+  },
+  {
+    "carId": 9,
+    "carImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq1TJwTiT5uDk1wgZMFbq-SgPuMb5Fnq674g&usqp=CAU",
+    "carType": "Sedan",
+    "carName": "Hyundai Sonata",
+    "carSeats": "5",
+    "fuelType": "Petrol",
+    "price": 36000,
+    "rentPerDay": 65
+  },
+  {
+    "carId": 10,
+    "carImage": "https://www.earnhardttoyota.com/blogs/4308/wp-content/uploads/2020/07/2021-Toyota-RAV4-Prime-side-view-Super-White_o.jpg",
+    "carType": "SUV",
+    "carName": "Toyota RAV4",
+    "carSeats": "5",
+    "fuelType": "Petrol",
+    "price": 33000,
+    "rentPerDay": 60
+  },
+  {
+    "carId": 11,
+    "carImage": "https://www.nicepng.com/png/detail/438-4385076_2019-ford-fiesta-2018-white-ford-fiesta-se.png",
+    "carType": "Hatchback",
+    "carName": "Ford Fiesta",
+    "carSeats": "4",
+    "fuelType": "Petrol",
+    "price": 27000,
+    "rentPerDay": 49
+  },
+  {
+    "carId": 12,
+    "carImage": "https://www.nicepng.com/png/detail/211-2113107_new-2018-volkswagen-golf-subaru-sti-white-2018.png",
+    "carType": "Hatchback",
+    "carName": "Volkswagen Golf",
+    "carSeats": "4",
+    "fuelType": "Diesel",
+    "price": 29000,
+    "rentPerDay": 53
+  },
+  {
+    "carId": 13,
+    "carImage": "https://crdms.images.consumerreports.org/c_lfill,w_768,q_auto,f_auto/prod/cars/chrome/white/2018SUC040012_1280_07",
+    "carType": "Sedan",
+    "carName": "Subaru Impreza",
+    "carSeats": "5",
+    "fuelType": "Electric",
+    "price": 35000,
+    "rentPerDay": 63
+  },
+  {
+    "carId": 14,
+    "carImage": "https://pngimg.com/d/mazda_PNG15.png",
+    "carType": "Sedan",
+    "carName": "Mazda 6",
+    "carSeats": "5",
+    "fuelType": "Diesel",
+    "price": 32000,
+    "rentPerDay": 58
+  },
+  {
+    "carId": 15,
+    "carImage": "https://www.nicepng.com/png/detail/283-2830689_2018-kia-sorento-2018-kia-sorento-white.png",
+    "carType": "SUV",
+    "carName": "Kia Sorento",
+    "carSeats": "7",
+    "fuelType": "Diesel",
+    "price": 40000,
+    "rentPerDay": 71
+  },
+  {
+    "carId": 16,
+    "carImage": "https://archive.izmostock.com/img-get/I0000X.ngNltnKLU/s/1000/2015-hyundai-tucson-launch-edition-5door-suv-low-aggressive.jpg",
+    "carType": "SUV",
+    "carName": "Hyundai Tucson",
+    "carSeats": "5",
+    "fuelType": "Electric",
+    "price": 38000,
+    "rentPerDay": 68
+  },
+  {
+    "carId": 17,
+    "carImage": "https://www.seekpng.com/png/detail/813-8139402_renault-png-clio-renault-2014-white.png",
+    "carType": "Hatchback",
+    "carName": "Renault Clio",
+    "carSeats": "4",
+    "fuelType": "Electric",
+    "price": 27000,
+    "rentPerDay": 49
+  },
+  {
+    "carId": 18,
+    "carImage": "https://crdms.images.consumerreports.org/c_lfill,w_720,q_auto,f_auto/prod/cars/chrome/white/2016HOS020005_1280_01",
+    "carType": "SUV",
+    "carName": "Honda CR-V",
+    "carSeats": "5",
+    "fuelType": "Petrol",
+    "price": 33000,
+    "rentPerDay": 60
+  },
+  {
+    "carId": 19,
+    "carImage": "https://m.atcdn.co.uk/vms/media/3d8ecc51bc524b8594feb6e3a9d815cf.jpg",
+    "carType": "Hatchback",
+    "carName": "Nissan Micra",
+    "carSeats": "4",
+    "fuelType": "Petrol",
+    "price": 26000,
+    "rentPerDay": 47
+  },
+  {
+    "carId": 20,
+    "carImage":"https://www.pngitem.com/pimgs/m/1-10859_ford-png-image-ford-fusion-16-white-transparent.png",
+    "carType": "Sedan",
+    "carName": "Ford Fusion",
+    "carSeats": "5",
+    "fuelType": "Electric",
+    "price": 36000,
+    "rentPerDay": 65
+  }
+]
